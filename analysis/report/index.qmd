@@ -1,0 +1,370 @@
+---
+title: "Embedding Python Code in UltiSnips Snippets"
+subtitle: >
+  Using Python interpolation to generate dynamic
+  content inside Vim snippet expansions
+author: "Ronald 'Ryy' G. Thomas"
+date: "2025-07-20"
+categories: [vim, python]
+description: >
+  I did not really know that UltiSnips could execute
+  Python code at expansion time until I needed a
+  snippet that generated a variable number of
+  elements based on user input.
+image: "media/images/hero.png"
+document-type: "blog"
+draft: false
+execute:
+  echo: true
+  warning: false
+  message: false
+  eval: false
+format:
+  html:
+    code-fold: false
+    code-tools: false
+---
+
+![Python and Vim integration through UltiSnips
+enables dynamic, programmable snippet
+expansions.](media/images/hero.png){.img-fluid
+width=80%
+fig-alt="The Python logo representing the scripting
+language used to add dynamic behaviour to UltiSnips
+snippets in Vim."}
+
+*When static snippets are not enough, Python
+interpolation fills the gap.*
+
+# Introduction
+
+[YOUR CONTENT HERE -- 2-3 paragraphs. Open with an
+"I didn't really know..." hook about UltiSnips
+Python interpolation. Reference the Stack Overflow
+question that prompted this post:
+https://stackoverflow.com/questions/78636197
+
+Describe the problem: needing a snippet that
+generates a variable number of elements (e.g.,
+music chord placeholders). Transition to what
+this post will cover.]
+
+More formally, this post documents the Vim-plugins layer
+(Layer 6) of the Workflow Construct described in
+[post 52](/posts/52-workflow-construct/), specifically
+UltiSnips with embedded Python for snippets that require
+runtime computation. Static snippets, where the expansion is
+literal text, are the simple case; dynamic snippets, where
+the expansion runs Python at expansion time, are what make
+UltiSnips meaningfully different from a paste buffer. This
+post is the dynamic-snippet companion to
+[post 30](/posts/30-setupRvimtex/), which covers the static
+R-plus-LaTeX snippet vocabulary.
+
+## Motivations
+
+[YOUR CONTENT HERE -- 4-6 bullet points. Personal
+and specific reasons. Examples: static snippets
+were too rigid, needed parametric expansion,
+wanted to automate repetitive patterns in code,
+saw the Stack Overflow question and wanted to solve
+it, etc.]
+
+## Objectives
+
+1. [YOUR CONTENT HERE -- specific, measurable]
+2. [YOUR CONTENT HERE]
+3. [YOUR CONTENT HERE]
+4. [YOUR CONTENT HERE]
+
+I am documenting my learning process here. If you
+spot errors or have better approaches, please let
+me know.
+
+![](media/images/vim-logo.png){.img-fluid width=30% fig-align="center"}
+
+*Vim's extensibility through UltiSnips and Python
+creates a powerful text generation system.*
+
+# Prerequisites and Setup
+
+[YOUR CONTENT HERE -- 1-2 paragraphs. What readers
+need: Vim 8+ compiled with Python3 support,
+UltiSnips plugin installed (via vim-plug, Vundle,
+or pathogen). Show how to verify Python support.]
+
+```vim
+" Check Python support in Vim
+:echo has('python3')
+
+" UltiSnips configuration in .vimrc
+Plug 'SirVer/ultisnips'
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+```
+
+# What is UltiSnips Python Interpolation?
+
+[YOUR CONTENT HERE -- 1-2 paragraphs in plain
+language. Explain that UltiSnips supports three
+interpolation types: shell (`), VimScript (!v), and
+Python (!p). Python interpolation executes Python
+code at snippet expansion time and inserts the
+result. Use an analogy -- e.g., a regular snippet
+is a rubber stamp, but Python interpolation is a
+mail merge that customises each stamp.]
+
+# Getting Started: Basic Python Snippets
+
+[YOUR CONTENT HERE -- First code examples. Start
+with simple Python interpolation: current date,
+simple string manipulation. Follow CODE -> OUTPUT
+-> INTERPRETATION. Show the snippet definition and
+what it expands to.]
+
+```
+# [YOUR SNIPPET HERE -- basic Python example]
+snippet today "Insert today's date"
+`!p snip.rv = __import__('datetime').date.today().isoformat()`
+endsnippet
+```
+
+[YOUR INTERPRETATION HERE -- 2-4 sentences
+explaining the syntax: `!p` marker, snip.rv,
+Python imports.]
+
+```
+# [YOUR SNIPPET HERE -- second basic example]
+```
+
+[YOUR INTERPRETATION HERE]
+
+![A research library environment representing the
+study phase of learning a new programming
+technique.](media/images/ambiance2.jpg){.img-fluid
+fig-alt="A well-lit library with books and study
+materials, representing the process of learning
+UltiSnips Python interpolation."}
+
+*Learning the interpolation syntax opens up a wide
+range of dynamic snippet possibilities.*
+
+## The Chord Generator: Solving the Stack Overflow
+  Problem
+
+[YOUR CONTENT HERE -- The core section. Show the
+original Stack Overflow problem: generating a
+variable number of chord placeholders. Present the
+Python function from the original post:]
+
+```python
+def make_chords(num_reps):
+    text = ""
+    for i in range(num_reps):
+        text += "< > "
+    return text
+```
+
+[YOUR CONTENT HERE -- Show how to embed this in an
+UltiSnips snippet definition. Walk through the
+syntax step by step.]
+
+```
+# [YOUR SNIPPET HERE -- chord generator]
+```
+
+[YOUR INTERPRETATION HERE]
+
+## Advanced Patterns
+
+[YOUR CONTENT HERE -- Show 2-3 more advanced Python
+interpolation patterns. Examples: generating
+numbered lists, creating boilerplate code with
+parameters, conditional content based on filetype.
+Each with CODE -> OUTPUT -> INTERPRETATION.]
+
+```
+# [YOUR SNIPPET HERE -- advanced example 1]
+```
+
+[YOUR INTERPRETATION HERE]
+
+```
+# [YOUR SNIPPET HERE -- advanced example 2]
+```
+
+[YOUR INTERPRETATION HERE]
+
+# Debugging Python Snippets
+
+[YOUR CONTENT HERE -- How to debug when Python
+interpolation fails. Show common error messages,
+how to check Vim's messages, how to test Python
+code outside of UltiSnips.]
+
+```vim
+" [YOUR DEBUG COMMANDS HERE]
+```
+
+[YOUR INTERPRETATION HERE]
+
+## Things to Watch Out For
+
+1. **[YOUR GOTCHA HERE]** -- [explanation]
+
+2. **[YOUR GOTCHA HERE]** -- [explanation]
+
+3. **[YOUR GOTCHA HERE]** -- [explanation]
+
+4. **[YOUR GOTCHA HERE]** -- [explanation]
+
+5. **[YOUR GOTCHA HERE]** -- [explanation]
+
+![A calm workspace at the end of a productive
+coding session, representing the completion of
+a Vim customisation
+project.](media/images/ambiance3.png){.img-fluid
+fig-alt="A minimalist desk with a monitor showing
+a Vim editor, representing the conclusion of an
+UltiSnips customisation session."}
+
+*A well-crafted snippet library compounds
+productivity gains over months and years.*
+
+## Lessons Learnt
+
+### Conceptual Understanding
+
+- [YOUR CONTENT HERE -- what you learnt about
+  UltiSnips architecture and Python interpolation]
+- [YOUR CONTENT HERE]
+- [YOUR CONTENT HERE]
+- [YOUR CONTENT HERE]
+
+### Technical Skills
+
+- [YOUR CONTENT HERE -- tools/techniques mastered:
+  snip.rv, tabstops with Python, importing modules,
+  etc.]
+- [YOUR CONTENT HERE]
+- [YOUR CONTENT HERE]
+- [YOUR CONTENT HERE]
+
+### Gotchas and Pitfalls
+
+- [YOUR CONTENT HERE -- practical warnings for
+  future UltiSnips users]
+- [YOUR CONTENT HERE]
+- [YOUR CONTENT HERE]
+- [YOUR CONTENT HERE]
+
+## Limitations
+
+- [YOUR CONTENT HERE -- 5-6 bullets. Cover: requires
+  Python3-compiled Vim, UltiSnips not available in
+  Neovim natively (use LuaSnip), Python code runs
+  synchronously, security concerns with untrusted
+  snippets, etc.]
+- [YOUR CONTENT HERE]
+- [YOUR CONTENT HERE]
+- [YOUR CONTENT HERE]
+- [YOUR CONTENT HERE]
+
+## Opportunities for Improvement
+
+1. [YOUR CONTENT HERE -- extensions: LuaSnip
+   equivalent for Neovim, snippet library sharing,
+   more complex generators, etc.]
+2. [YOUR CONTENT HERE]
+3. [YOUR CONTENT HERE]
+4. [YOUR CONTENT HERE]
+5. [YOUR CONTENT HERE]
+6. [YOUR CONTENT HERE]
+
+# Wrapping Up
+
+[YOUR CONTENT HERE -- 2-3 paragraphs. First: recap
+the main technique. Second: what you learnt
+personally. Third: advice for readers.]
+
+Main takeaways:
+
+- [YOUR CONTENT HERE -- 3-4 specific results]
+- [YOUR CONTENT HERE]
+- [YOUR CONTENT HERE]
+- [YOUR CONTENT HERE]
+
+# See Also
+
+**Related posts:**
+
+- "Writing a Simple Vim Plugin for REPL Interaction"
+  (complementary Vim customisation)
+- [YOUR RELATED POST 2]
+
+**Key resources:**
+
+- [UltiSnips Documentation](
+  https://github.com/SirVer/ultisnips/blob/master/
+  doc/UltiSnips.txt) --
+  Official UltiSnips reference
+- [UltiSnips Python Interpolation (Vimcasts)](
+  http://vimcasts.org/episodes/
+  ultisnips-python-interpolation/) --
+  Video tutorial on Python snippets
+- [Stack Overflow: Python in UltiSnips](
+  https://stackoverflow.com/questions/78636197) --
+  The question that prompted this post
+- [LuaSnip (Neovim alternative)](
+  https://github.com/L3MON4D3/LuaSnip) --
+  Lua-based snippet engine for Neovim
+- [Vim Python Interface Documentation](
+  https://vimhelp.org/if_pyth.txt.html) --
+  Official Vim-Python integration reference
+
+# Reproducibility
+
+[YOUR CONTENT HERE -- environment description:
+Vim version, Python version, UltiSnips version.]
+
+| File | Purpose |
+|------|---------|
+| [YOUR FILES HERE] | [descriptions] |
+
+```vim
+" To verify your setup:
+:echo has('python3')
+:echo g:UltiSnipsExpandTrigger
+```
+
+```{r}
+#| echo: false
+#| eval: false
+sessionInfo()
+```
+
+# Let's Connect
+
+- **GitHub:**
+  [rgt47](https://github.com/rgt47)
+- **Twitter/X:**
+  [@rgt47](https://twitter.com/rgt47)
+- **LinkedIn:**
+  [Ronald Glenn Thomas](
+  https://linkedin.com/in/rgthomaslab)
+- **Email:**
+  [rgtlab.org/contact](
+  https://rgtlab.org/contact)
+
+I would enjoy hearing from you if:
+
+- You spot an error or a better approach to any of
+  the code in this post.
+- You have suggestions for topics you would like to
+  see covered.
+- You want to discuss R programming, data science,
+  or reproducible research.
+- You have questions about anything in this
+  tutorial.
+- You just want to say hello and connect.
