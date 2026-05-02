@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Motivations}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Objectives}{3}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Prerequisites and Setup}{3}{section.2}%
+\contentsline {section}{\numberline {3}What is UltiSnips Python Interpolation?}{3}{section.3}%
+\contentsline {section}{\numberline {4}Getting Started: Basic Python Snippets}{4}{section.4}%
+\contentsline {subsection}{\numberline {4.1}The Chord Generator: Solving the Stack Overflow}{5}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Advanced Patterns}{5}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Debugging Python Snippets}{5}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Things to Watch Out For}{6}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Lessons Learnt}{6}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Conceptual Understanding}{6}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Technical Skills}{7}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}Gotchas and Pitfalls}{7}{subsubsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.3}Limitations}{7}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Opportunities for Improvement}{7}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Wrapping Up}{7}{section.6}%
+\contentsline {section}{\numberline {7}See Also}{8}{section.7}%
+\contentsline {section}{\numberline {8}Reproducibility}{8}{section.8}%
+\contentsline {section}{\numberline {9}Let's Connect}{8}{section.9}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
