@@ -1,8 +1,5 @@
 ---
 title: "Embedding Python Code in UltiSnips Snippets"
-subtitle: >
-  Using Python interpolation to generate dynamic
-  content inside Vim snippet expansions
 author: "Ronald 'Ryy' G. Thomas"
 date: "2025-07-20"
 categories: [vim, python]
@@ -31,7 +28,7 @@ expansions.](media/images/hero.png){.img-fluid
 width=80%
 fig-alt="The Python logo representing the scripting
 language used to add dynamic behaviour to UltiSnips
-snippets in Vim."}
+snippets in Vim." fig-align="center"}
 
 *When static snippets are not enough, Python
 interpolation fills the gap.*
